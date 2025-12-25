@@ -3,7 +3,8 @@
 A modern, responsive personal portfolio built with **React** and **Tailwind CSS**, featuring dark/light mode and showcasing my projects and skills.
 
 ## 🚀 Live Demo
-👉 https://your-vercel-link.vercel.app
+👉 https://rishivykunta.vercel.app
+
 
 ## 🛠 Tech Stack
 - React.js
