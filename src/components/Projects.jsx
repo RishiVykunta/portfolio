@@ -12,7 +12,16 @@ const Projects = () => {
         'A full-stack Job Portal Web Application where candidates can search and apply for jobs, recruiters can post job listings, and admins can manage users, jobs, and applications.',
       techStack: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT Authentication'],
       github: 'https://github.com/RishiVykunta/job-portal',
-      demo: 'https://job-portal-frontend-ax4u.onrender.com',
+      demo: 'https://job-portal-frontend-c4f2.onrender.com',
+      category: 'Full Stack',
+    },
+    {
+      title: 'Full-Stack E-Commerce',
+      description:
+        'A production-grade full-stack e-commerce application with user authentication, product management, shopping cart, Razorpay payment integration, order management, and admin panel.',
+      techStack: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'Razorpay', 'Vite'],
+      github: 'https://github.com/RishiVykunta/e-commerce',
+      demo: 'https://e-commerce-seven-ashen-41.vercel.app',
       category: 'Full Stack',
     },
   ];

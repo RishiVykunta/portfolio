@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Mail,
   Phone,
   MapPin,
   Github,
   Linkedin,
+  Instagram,
   Send,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -19,15 +24,118 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState({ type: null, message: '' });
+
+  // EmailJS Configuration
+  // To set up EmailJS:
+  // 1. Go to https://www.emailjs.com/ and create a free account
+  // 2. Create an email service (Gmail, Outlook, etc.)
+  // 3. Create an email template
+  // 4. Get your Public Key, Service ID, and Template ID
+  // 5. Add them to your .env file (remove any quotes or spaces)
+  const EMAILJS_SERVICE_ID = (process.env.REACT_APP_EMAILJS_SERVICE_ID || '').trim();
+  const EMAILJS_TEMPLATE_ID = (process.env.REACT_APP_EMAILJS_TEMPLATE_ID || '').trim();
+  const EMAILJS_PUBLIC_KEY = (process.env.REACT_APP_EMAILJS_PUBLIC_KEY || '').trim();
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    if (EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY' && EMAILJS_PUBLIC_KEY !== '') {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+  }, [EMAILJS_PUBLIC_KEY]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Clear status when user starts typing
+    if (status.type) setStatus({ type: null, message: '' });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Message sent successfully!');
-    setFormData({ name: '', email: '', message: '' });
+    setIsLoading(true);
+    setStatus({ type: null, message: '' });
+
+    try {
+      // Check if EmailJS is configured
+      const isPlaceholder = (value) => {
+        const placeholders = [
+          'YOUR_SERVICE_ID',
+          'YOUR_TEMPLATE_ID',
+          'YOUR_PUBLIC_KEY',
+          'your_service_id_here',
+          'your_template_id_here',
+          'your_public_key_here',
+          '',
+        ];
+        return !value || placeholders.includes(value);
+      };
+
+      if (
+        isPlaceholder(EMAILJS_SERVICE_ID) ||
+        isPlaceholder(EMAILJS_TEMPLATE_ID) ||
+        isPlaceholder(EMAILJS_PUBLIC_KEY)
+      ) {
+        throw new Error(
+          'EmailJS is not configured. Please:\n1. Open frontend/.env file\n2. Replace the placeholder values with your actual EmailJS credentials\n3. Restart the development server (stop with Ctrl+C, then run npm start again)\n\nSee EMAILJS_SETUP.md for detailed instructions.'
+        );
+      }
+
+      // Validate public key format (should be a string, not empty)
+      if (EMAILJS_PUBLIC_KEY.length < 10) {
+        throw new Error(
+          'Invalid EmailJS Public Key format. Please check your .env file and ensure there are no extra quotes or spaces.'
+        );
+      }
+
+      // Initialize EmailJS if not already initialized
+      if (!emailjs.init) {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+      }
+
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'arasavillirishi0@gmail.com', // Your email
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus({
+        type: 'success',
+        message: 'Message sent successfully! I\'ll get back to you soon.',
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      
+      // Provide more specific error messages
+      let errorMessage = 'Failed to send message. ';
+      
+      if (error.text) {
+        errorMessage += error.text;
+      } else if (error.message) {
+        errorMessage += error.message;
+      } else if (error.status === 400) {
+        errorMessage += 'Invalid EmailJS configuration. Please check your Service ID, Template ID, and Public Key in the .env file.';
+      } else if (error.status === 401) {
+        errorMessage += 'Invalid Public Key. Please verify your EmailJS Public Key in the .env file and restart the server.';
+      } else {
+        errorMessage += 'Please try again or contact me directly at arasavillirishi0@gmail.com';
+      }
+      
+      setStatus({
+        type: 'error',
+        message: errorMessage,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -115,6 +223,15 @@ const Contact = () => {
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
+
+                <a
+                  href="https://www.instagram.com/rish_i__x?igsh=MW5kOXpjbTNzcGc3bw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg border border-border hover:border-accent hover:bg-white/5 transition"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
               </div>
             </div>
           </Card>
@@ -122,6 +239,23 @@ const Contact = () => {
           {/* RIGHT: FORM */}
           <Card className="p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Status Messages */}
+              {status.type && (
+                <div
+                  className={`p-4 rounded-lg border flex items-start gap-3 ${
+                    status.type === 'success'
+                      ? 'bg-green-500/10 border-green-500/50 text-green-600 dark:text-green-400'
+                      : 'bg-red-500/10 border-red-500/50 text-red-600 dark:text-red-400'
+                  }`}
+                >
+                  {status.type === 'success' ? (
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                  ) : (
+                    <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                  )}
+                  <p className="text-sm font-medium flex-1">{status.message}</p>
+                </div>
+              )}
 
               <div className="space-y-2">
                 <Label>Name</Label>
@@ -131,6 +265,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
 
@@ -143,6 +278,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
 
@@ -155,12 +291,26 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
 
-              <Button type="submit" className="w-full group">
-                Send Message
-                <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <Button
+                type="submit"
+                className="w-full group"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </Button>
             </form>
           </Card>

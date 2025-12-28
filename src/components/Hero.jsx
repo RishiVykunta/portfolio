@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Instagram, Mail } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (href) => {
@@ -80,6 +80,15 @@ const Hero = () => {
                 className="p-2 rounded-lg border border-border hover:border-accent hover:bg-white/5 transition-all hover:-translate-y-1"
               >
                 <Linkedin className="h-5 w-5" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/rish_i__x?igsh=MW5kOXpjbTNzcGc3bw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg border border-border hover:border-accent hover:bg-white/5 transition-all hover:-translate-y-1"
+              >
+                <Instagram className="h-5 w-5" />
               </a>
 
               <a

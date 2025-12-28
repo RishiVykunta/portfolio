@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card } from './ui/card';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, MapPin } from 'lucide-react';
 
 const About = () => {
+
   return (
     <section id="about" className="py-20 px-6">
       <div className="container mx-auto max-w-4xl">
@@ -23,22 +24,50 @@ const About = () => {
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 As a student, I enjoy working across the full stack—from crafting
-                responsive user interfaces to developing robust backend systems and smart
+                responsive user interfaces to developing  backend systems and smart
                 contract logic. I am passionate about learning new technologies, solving
                 real-world problems, and building secure, efficient applications that
                 create meaningful user experiences.
               </p>
             </div>
 
-            <Card className="p-6 border-accent/20 hover:border-accent/50 transition-colors">
-              <div className="flex items-start space-x-3">
-                <GraduationCap className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+            <Card className="p-6 border-accent/20 hover:border-accent/50 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 group">
+              {/* Header with Icon */}
+              <div className="flex items-center gap-3 mb-5 pb-4 border-b border-border/50">
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 border border-accent/30 group-hover:border-accent/50 transition-colors">
+                  <GraduationCap className="h-5 w-5 text-accent" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-xl text-foreground">Education</h3>
+                  <div className="h-0.5 w-16 bg-gradient-to-r from-accent to-accent/30 rounded-full mt-1"></div>
+                </div>
+              </div>
+
+              {/* Institution Info */}
+              <div className="space-y-3">
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Education</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Indian Institute of Information Technology, Vadodara
+                  <p className="text-foreground font-semibold text-base leading-snug mb-1">
+                    Indian Institute of Information{' '}
+                    <span className="text-foreground font-medium text-muted-foreground">
+                      Technology, Vadodara
+                    </span>
                   </p>
-                  <p className="text-accent text-sm font-mono mt-1">2nd Year Student</p>
+                </div>
+
+                {/* Location */}
+                <div className="flex items-center gap-2 text-muted-foreground text-xs">
+                  <MapPin className="h-3.5 w-3.5" />
+                  <span>Diu, Daman and Diu</span>
+                </div>
+
+                {/* Status Badge */}
+                <div className="pt-2 border-t border-border/30">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-block w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    <p className="text-accent font-mono text-sm font-semibold">
+                      2nd Year Student
+                    </p>
+                  </div>
                 </div>
               </div>
             </Card>
