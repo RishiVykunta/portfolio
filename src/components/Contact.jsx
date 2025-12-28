@@ -146,10 +146,12 @@ const Contact = () => {
       <div className="container mx-auto max-w-6xl space-y-16">
 
         {/* SECTION HEADER */}
-        <div className="text-center space-y-4">
-          <p className="text-sm font-mono text-muted">04.</p>
-          <h2 className="text-4xl font-bold">Get In Touch</h2>
-          <p className="text-muted text-lg">
+        <div className="space-y-2">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            <span className="text-accent font-mono text-lg">04.</span> Get In Touch
+          </h2>
+          <div className="h-0.5 w-24 bg-accent"></div>
+          <p className="text-muted-foreground">
             Let&apos;s build something together
           </p>
         </div>
