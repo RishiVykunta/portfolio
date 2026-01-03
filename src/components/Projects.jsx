@@ -16,12 +16,30 @@ const Projects = () => {
       category: 'Full Stack',
     },
     {
-      title: 'Full-Stack E-Commerce',
+      title: 'E-Commerce',
       description:
         'A production-grade full-stack e-commerce application with user authentication, product management, shopping cart, Razorpay payment integration, order management, and admin panel.',
       techStack: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'Razorpay', 'Vite'],
       github: 'https://github.com/RishiVykunta/e-commerce',
       demo: 'https://e-commerce-seven-ashen-41.vercel.app',
+      category: 'Full Stack',
+    },
+    {
+      title: 'Real-Time SaaS Admin Dashboard',
+      description:
+        'A production-ready real-time SaaS dashboard with role-based access (Admin, Manager, User), live activity tracking, analytics charts, Socket.IO updates, and CSV/PDF export.',
+      techStack: [
+        'React',
+        'Node.js',
+        'Express',
+        'PostgreSQL',
+        'Socket.IO',
+        'JWT',
+        'Tailwind CSS',
+        'Chart.js',
+      ],
+      github: 'https://github.com/RishiVykunta/Real-Time-SaaS-Dashboard',
+      demo: 'https://real-time-saa-s-dashboard.vercel.app',
       category: 'Full Stack',
     },
   ];
@@ -72,32 +90,15 @@ const Projects = () => {
                   </div>
 
                   <div className="flex gap-3">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      asChild
-                      className="flex-1"
-                    >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                    <Button variant="outline" size="sm" asChild className="flex-1">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4" />
                         Code
                       </a>
                     </Button>
                     {project.demo && (
-                      <Button
-                        size="sm"
-                        asChild
-                        className="flex-1"
-                      >
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                      <Button size="sm" asChild className="flex-1">
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
                           Live Demo
                         </a>
@@ -108,7 +109,6 @@ const Projects = () => {
               </Card>
             ))}
 
-            {/* Placeholder cards to show expandable design */}
             <Card className="flex items-center justify-center border-dashed border-2 border-border hover:border-accent/50 transition-colors min-h-[300px]">
               <div className="text-center space-y-2 p-6">
                 <p className="text-muted-foreground text-sm">More projects coming soon...</p>
