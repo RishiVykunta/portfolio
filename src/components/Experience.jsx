@@ -25,10 +25,10 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 md:py-32 bg-slate-50 dark:bg-background overflow-hidden relative">
       {/* Intricate Circular Grid Background */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-60 dark:opacity-50">
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-60 dark:opacity-80">
         <motion.svg
           viewBox="0 0 1000 1000"
-          className="w-[200vw] h-[200vh] text-blue-900/50 dark:text-white/40"
+          className="w-[200vw] h-[200vh] text-blue-900/50 dark:text-indigo-400/30"
           initial={{ rotate: 0 }}
           animate={{ rotate: 360 }}
           transition={{ duration: 200, repeat: Infinity, ease: "linear" }}
@@ -41,7 +41,7 @@ const Experience = () => {
               r={150 + (i * 50)}
               fill="none"
               stroke="currentColor"
-              strokeWidth="0.5"
+              strokeWidth="0.8"
               strokeDasharray="10 20"
             />
           ))}
