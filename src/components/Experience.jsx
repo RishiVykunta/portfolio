@@ -137,25 +137,31 @@ const Experience = () => {
 
                   <div className="flex items-center space-x-2 pt-4 border-t border-border/50">
                     {exp.github && (
-                      <Button variant="ghost" size="icon" className="group/btn hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full h-8 w-8" asChild>
-                        <a href={exp.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 text-muted-foreground group-hover/btn:text-foreground transition-colors" />
-                        </a>
-                      </Button>
+                      <motion.div whileHover={{ scale: 1.1, rotate: 5 }} whileTap={{ scale: 0.9 }}>
+                        <Button variant="ghost" size="icon" className="group/btn hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full h-8 w-8" asChild>
+                          <a href={exp.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4 text-muted-foreground group-hover/btn:text-foreground transition-colors" />
+                          </a>
+                        </Button>
+                      </motion.div>
                     )}
                     {exp.demo && (
-                      <Button variant="ghost" size="icon" className="group/btn hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full h-8 w-8" asChild>
-                        <a href={exp.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 text-muted-foreground group-hover/btn:text-foreground transition-colors" />
-                        </a>
-                      </Button>
+                      <motion.div whileHover={{ scale: 1.1, rotate: -5 }} whileTap={{ scale: 0.9 }}>
+                        <Button variant="ghost" size="icon" className="group/btn hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full h-8 w-8" asChild>
+                          <a href={exp.demo} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4 text-muted-foreground group-hover/btn:text-foreground transition-colors" />
+                          </a>
+                        </Button>
+                      </motion.div>
                     )}
                     {exp.instagram && (
-                      <Button variant="ghost" size="icon" className="group/btn hover:bg-pink-50 dark:hover:bg-pink-900/20 rounded-full h-8 w-8" asChild>
-                        <a href={exp.instagram} target="_blank" rel="noopener noreferrer">
-                          <Instagram className="h-4 w-4 text-muted-foreground group-hover/btn:text-pink-500 transition-colors" />
-                        </a>
-                      </Button>
+                      <motion.div whileHover={{ scale: 1.1, rotate: 5 }} whileTap={{ scale: 0.9 }}>
+                        <Button variant="ghost" size="icon" className="group/btn hover:bg-pink-50 dark:hover:bg-pink-900/20 rounded-full h-8 w-8" asChild>
+                          <a href={exp.instagram} target="_blank" rel="noopener noreferrer">
+                            <Instagram className="h-4 w-4 text-muted-foreground group-hover/btn:text-pink-500 transition-colors" />
+                          </a>
+                        </Button>
+                      </motion.div>
                     )}
                   </div>
                 </CardContent>

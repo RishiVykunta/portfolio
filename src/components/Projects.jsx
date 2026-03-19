@@ -160,19 +160,23 @@ const Projects = () => {
                     </div>
 
                     <div className="flex gap-4">
-                      <Button variant="outline" size="sm" asChild className="flex-1 rounded-xl border-border hover:bg-indigo-50 group/btn h-11">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
-                          Code
-                        </a>
-                      </Button>
-                      {project.demo && (
-                        <Button size="sm" asChild className="flex-1 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-500/20 group/btn h-11">
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
-                            Live
+                      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.95 }} className="flex-1">
+                        <Button variant="outline" size="sm" asChild className="w-full rounded-xl border-border hover:bg-indigo-50 group/btn h-11 transition-all duration-300">
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
+                            Code
                           </a>
                         </Button>
+                      </motion.div>
+                      {project.demo && (
+                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.95 }} className="flex-1">
+                          <Button size="sm" asChild className="w-full rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-500/20 group/btn h-11 transition-all duration-300">
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
+                              Live
+                            </a>
+                          </Button>
+                        </motion.div>
                       )}
                     </div>
                   </CardContent>
