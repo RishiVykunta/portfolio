@@ -16,7 +16,7 @@ const Projects = () => {
       demo: 'https://agri-bridge-jljo.vercel.app',
       category: 'Full Stack',
       color: 'from-green-500 to-emerald-600',
-      image: 'https://images.unsplash.com/photo-1592982537447-6f2334208f34?q=80&w=800&auto=format&fit=crop'
+      image: '/projects/agribridge.png'
     },
     {
       title: 'Railway Management System',
@@ -27,7 +27,7 @@ const Projects = () => {
       demo: 'https://rms-sable.vercel.app/',
       category: 'Full Stack',
       color: 'from-blue-500 to-cyan-600',
-      image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=800&auto=format&fit=crop'
+      image: '/projects/rms.png'
     },
     {
       title: 'AI Resume Analyzer',
@@ -38,7 +38,7 @@ const Projects = () => {
       demo: 'https://ai-resume-analizer-sage.vercel.app/',
       category: 'Full Stack',
       color: 'from-purple-500 to-pink-600',
-      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop'
+      image: '/projects/ai_resume.png'
     },
   ];
 
