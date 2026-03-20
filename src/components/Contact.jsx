@@ -157,15 +157,17 @@ const Contact = () => {
 
           {/* SECTION HEADER */}
           <div className="space-y-4 max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center space-x-2 text-indigo-500 font-mono text-sm tracking-widest uppercase"
-            >
-              <Globe className="w-4 h-4" />
-              <span>04. Contact</span>
-            </motion.div>
+          {/* Section Label - Top Left */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="absolute top-12 left-6 md:left-12 flex items-center space-x-2 text-indigo-500 font-mono text-sm tracking-widest uppercase z-20"
+          >
+            <Globe className="w-4 h-4" />
+            <span>04. Contact</span>
+          </motion.div>
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
