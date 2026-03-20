@@ -48,19 +48,17 @@ const Experience = () => {
         </motion.svg>
       </div>
 
-      {/* Section Label - Top Left */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="absolute top-12 left-6 md:left-12 flex items-center space-x-2 text-indigo-500 font-mono text-sm tracking-widest uppercase z-20"
-      >
-        <Sparkle className="w-4 h-4" />
-        <span>03. Showcase</span>
-      </motion.div>
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center mb-16 space-y-4">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center space-x-2 text-indigo-500 font-mono text-sm tracking-widest uppercase mb-4"
+          >
+            <Sparkle className="w-4 h-4" />
+            <span>Journey</span>
+          </motion.div>
           <motion.h2
             className="text-4xl md:text-5xl font-black text-center"
             initial={{ opacity: 0, scale: 0.9 }}

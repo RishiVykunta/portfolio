@@ -87,17 +87,16 @@ const Skills = () => {
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 blur-[120px] rounded-full z-0 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center mb-20 space-y-4 text-center">
-      {/* Section Label - Top Left */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="absolute top-12 left-6 md:left-12 flex items-center space-x-2 text-indigo-500 font-mono text-sm tracking-widest uppercase z-20"
-      >
-        <Cpu className="w-4 h-4" />
-        <span>02. Arsenal</span>
-      </motion.div>
+        <div className="flex flex-col items-center mb-16 space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center space-x-2 text-indigo-500 font-mono text-sm tracking-widest uppercase mb-4"
+          >
+            <Cpu className="w-4 h-4" />
+            <span>Skills</span>
+          </motion.div>
           <motion.h2 
             className="text-4xl md:text-5xl font-black"
             initial={{ opacity: 0, scale: 0.9 }}
