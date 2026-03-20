@@ -125,33 +125,33 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-indigo-50/30 dark:bg-background overflow-hidden relative">
+    <section id="contact" className="py-24 md:py-32 bg-slate-50/50 dark:bg-background overflow-hidden relative">
       {/* Concentric Tunnel Decor */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-40 dark:opacity-50">
-        <motion.svg 
-          viewBox="0 0 800 800" 
+        <motion.svg
+          viewBox="0 0 800 800"
           className="w-[150vw] h-[150vh] text-blue-900/50 dark:text-white/40"
           initial={{ scale: 0.8, rotate: 0 }}
           animate={{ scale: 1.2, rotate: 90 }}
           transition={{ duration: 40, repeat: Infinity, repeatType: "mirror", ease: "linear" }}
         >
           {Array.from({ length: 35 }).map((_, i) => (
-             <rect
-               key={i}
-               x={400 - (i * 12)}
-               y={400 - (i * 12)}
-               width={i * 24}
-               height={i * 24}
-               rx={i * 4}
-               stroke="currentColor"
-               strokeWidth="0.5"
-               fill="none"
-               transform={`rotate(${i * 2} 400 400)`}
-             />
+            <rect
+              key={i}
+              x={400 - (i * 12)}
+              y={400 - (i * 12)}
+              width={i * 24}
+              height={i * 24}
+              rx={i * 4}
+              stroke="currentColor"
+              strokeWidth="0.5"
+              fill="none"
+              transform={`rotate(${i * 2} 400 400)`}
+            />
           ))}
         </motion.svg>
       </div>
-      
+
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="space-y-16">
 
@@ -312,7 +312,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       disabled={isLoading}
-                      className="rounded-[2rem] glass-card border-none bg-indigo-500/5 focus:ring-2 focus:ring-indigo-500 transition-all font-medium text-lg p-6 resize-none"
+                      className="rounded-[3.9rem] bg-indigo-50 dark:bg-[#0A0D14] overflow-hidden border-none focus:ring-2 focus:ring-indigo-500 transition-all font-medium text-lg p-6 resize-none"
                     />
                   </div>
 
@@ -326,7 +326,7 @@ const Contact = () => {
                       <Loader2 className="h-6 w-6 animate-spin" />
                     ) : (
                       <>
-                        <span>Beam Message</span>
+                        <span>Send Message</span>
                         <Send className="ml-3 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </>
                     )}

@@ -92,10 +92,10 @@ const Skills = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest"
+            className="inline-flex items-center space-x-2 text-indigo-500 font-mono text-sm tracking-widest uppercase"
           >
             <Cpu className="w-4 h-4" />
-            <span>My Expertise</span>
+            <span>02. Expertise</span>
           </motion.div>
           <motion.h2 
             className="text-4xl md:text-5xl font-black"
@@ -103,10 +103,10 @@ const Skills = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            Technical <span className="text-indigo-500">Arsenal.</span>
+            Technical <span className="text-gradient">Arsenal.</span>
           </motion.h2>
           <motion.p 
-            className="text-muted-foreground max-w-2xl text-lg leading-relaxed"
+            className="text-muted-foreground max-w-2xl text-lg leading-relaxed mix-blend-multiply dark:mix-blend-normal"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -125,14 +125,14 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ delay: catIndex * 0.1 }}
             >
-              <Card className="h-full bg-slate-900/50 backdrop-blur-xl border border-white/5 p-8 rounded-[2.5rem] hover:border-indigo-500/30 transition-all duration-500 group overflow-hidden">
-                <div className="space-y-10 relative">
+              <Card className="h-full glass-card border-none p-8 rounded-[2.5rem] hover:border-indigo-500/30 transition-all duration-500 group overflow-hidden relative">
+                <div className="space-y-10 relative z-10">
                   {/* Category Header */}
                   <div className="flex items-center space-x-4">
-                    <div className="w-14 h-14 rounded-2xl bg-slate-800/80 flex items-center justify-center text-indigo-400 border border-white/5 transition-transform duration-500 group-hover:scale-110 shadow-lg">
+                    <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 dark:bg-slate-800/80 flex items-center justify-center text-indigo-500 dark:text-indigo-400 border border-indigo-500/20 dark:border-white/5 transition-transform duration-500 group-hover:scale-110 shadow-lg">
                       <category.icon size={28} />
                     </div>
-                    <h3 className="text-xl font-black leading-tight max-w-[120px]">
+                    <h3 className="text-xl font-black leading-tight max-w-[120px] text-foreground">
                       {category.title}
                     </h3>
                   </div>
@@ -142,13 +142,13 @@ const Skills = () => {
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skill.name} className="space-y-3">
                         <div className="flex items-center justify-between text-sm">
-                          <div className="flex items-center space-x-3 text-slate-300 group-hover:text-white transition-colors capitalize font-bold">
+                          <div className="flex items-center space-x-3 text-muted-foreground group-hover:text-foreground transition-colors capitalize font-bold">
                             <skill.icon size={18} className={category.textColor} />
                             <span>{skill.name}</span>
                           </div>
-                          <span className="font-mono text-slate-500 font-bold">{skill.percentage}%</span>
+                          <span className="font-mono text-muted-foreground font-bold">{skill.percentage}%</span>
                         </div>
-                        <div className="h-2 w-full bg-slate-800 rounded-full overflow-hidden border border-white/5 p-[1.5px]">
+                        <div className="h-2 w-full bg-indigo-500/5 dark:bg-slate-800 rounded-full overflow-hidden border border-indigo-500/10 dark:border-white/5 p-[1.5px]">
                           <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: `${skill.percentage}%` }}

@@ -27,12 +27,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: '01. Background', href: '#about' },
+    { name: '02. Expertise', href: '#skills' },
+    { name: '02. Journey', href: '#experience' },
+    { name: '03. Showcase', href: '#projects' },
+    { name: '04. Contact', href: '#contact' },
   ];
 
   const scrollToSection = (e, href) => {

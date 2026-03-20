@@ -10,25 +10,25 @@
 
 :root {
   --bg: 255 255 255;
-  --foreground: 15 23 42;
-  --card: 255 255 255;
-  --card-foreground: 15 23 42;
-  --primary: 99 102 241; /* Indigo 500 */
+  --foreground: 7 10 25; /* Deeper navy for better readability */
+  --card: 252 253 255; /* Subtle blue tint for cards */
+  --card-foreground: 7 10 25;
+  --primary: 79 70 229; /* Indigo 600 - slightly deeper */
   --primary-foreground: 255 255 255;
-  --secondary: 241 245 249;
-  --secondary-foreground: 15 23 42;
+  --secondary: 248 250 252;
+  --secondary-foreground: 7 10 25;
   --muted: 241 245 249;
-  --muted-foreground: 100 116 139;
-  --accent: 79 70 229;
+  --muted-foreground: 71 85 105; /* More readable gray */
+  --accent: 99 102 241;
   --accent-foreground: 255 255 255;
-  --border: 226 232 240;
-  --input: 226 232 240;
-  --ring: 99 102 241;
-  --radius: 0.75rem;
+  --border: 232 238 248; /* Softer, slightly blueish border */
+  --input: 232 238 248;
+  --ring: 79 70 229;
+  --radius: 1rem; /* Slightly softer corners */
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.3);
+  /* Glassmorphism Refined */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(99, 102, 241, 0.08); /* Indigo-tinted border for glass */
 }
 
 .dark {

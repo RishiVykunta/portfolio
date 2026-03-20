@@ -273,7 +273,7 @@ const Hero = () => {
                 className="relative p-1 rounded-[4rem] bg-gradient-to-tr from-indigo-500/20 via-purple-500/20 to-indigo-500/20 shadow-2xl overflow-hidden group-hover:shadow-indigo-500/40 transition-shadow duration-700"
                 style={{ transform: "translateZ(20px)" }}
               >
-                <div className="rounded-[3.9rem] bg-[#0A0D14] overflow-hidden">
+                <div className="rounded-[3.9rem] bg-slate-100 dark:bg-[#0A0D14] overflow-hidden">
                   <img
                     src="https://customer-assets.emergentagent.com/job_4fdcc5aa-2a92-4059-bc05-4419b2b4a7eb/artifacts/qanu8ukm_image.png"
                     alt="Rishi Vykunta"
