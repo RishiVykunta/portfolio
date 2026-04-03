@@ -8,6 +8,28 @@ import { ExternalLink, Github, Folder, Sparkle } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: 'CareLink',
+      description:
+        'A premium, high-fidelity healthcare support platform designed to bridge the gap between patients in need and verified medical professionals/NGO volunteers. Features a smart AI triage assistant.',
+      techStack: ['Next.js 16', 'Tailwind CSS v4', 'PostgreSQL', 'Lucide React'],
+      github: 'https://github.com/RishiVykunta/carelink',
+      demo: 'https://carelink-pink-three.vercel.app/',
+      category: 'Full Stack',
+      color: 'from-rose-500 to-orange-400',
+      image: '/projects/carelink.png'
+    },
+    {
+      title: 'ITZFIZZ: Scroll Hero',
+      description:
+        'A high-performance, minimalist scroll-driven React Hero Section sequence featuring fluid GSAP animations, parallax effects, and smooth SVG scrubbing interactions.',
+      techStack: ['Next.js 15', 'GSAP', 'ScrollTrigger', 'Vanilla CSS 3'],
+      github: 'https://github.com/RishiVykunta/scroll-hero-animation',
+      demo: 'https://scroll-hero-animation-ten.vercel.app/',
+      category: 'Animation/UI',
+      color: 'from-slate-800 to-indigo-900',
+      image: '/projects/scroll_hero.png'
+    },
+    {
       title: 'AgriBridge',
       description:
         'A modern, full-stack e-commerce and community platform specifically tailored for the agricultural sector. Features role-based auth, an extensive catalog, advanced shopping cart, and specialist consultations.',
