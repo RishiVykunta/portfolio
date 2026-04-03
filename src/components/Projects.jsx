@@ -154,7 +154,7 @@ const Projects = () => {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="absolute inset-0 w-full h-full object-cover mix-blend-overlay group-hover:mix-blend-normal opacity-70 group-hover:opacity-100 transition-all duration-700 scale-100 group-hover:scale-110"
+                        className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 scale-100 group-hover:scale-110 brightness-[0.8] group-hover:brightness-100"
                       />
                     )}
                     <Folder className="absolute bottom-4 left-4 h-12 w-12 text-white/40 group-hover:scale-110 transition-transform duration-500 z-20" />
