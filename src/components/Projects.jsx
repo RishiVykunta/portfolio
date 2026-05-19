@@ -107,7 +107,7 @@ const Projects = () => {
         </motion.svg>
       </div>
 
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
         <div className="space-y-16">
           <div className="space-y-4 max-w-2xl">
             <motion.div
@@ -147,7 +147,7 @@ const Projects = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="flex flex-col h-full glass-card group hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-3 transform-gpu">
+                <Card className="flex flex-col h-full glass-card group hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-3 transform-gpu overflow-hidden">
                   <div className={`h-48 w-full bg-gradient-to-br ${project.color} relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500 z-10" />
                     {project.image && (
@@ -163,7 +163,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <CardHeader className="space-y-4">
+                  <CardHeader className="space-y-4 p-6 pb-2">
                     <CardTitle className="text-2xl font-bold group-hover:text-indigo-500 transition-colors">
                       {project.title}
                     </CardTitle>
@@ -172,7 +172,7 @@ const Projects = () => {
                     </CardDescription>
                   </CardHeader>
 
-                  <CardContent className="flex-1 flex flex-col justify-between space-y-8">
+                  <CardContent className="flex-1 flex flex-col justify-between space-y-6 p-6 pt-2">
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech, techIndex) => (
                         <Badge key={techIndex} variant="secondary" className="bg-indigo-500/5 text-indigo-500 border-none px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">
